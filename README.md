@@ -5,8 +5,8 @@ An animated Frieren: Beyond Journey's End theme for the Potassium executor. Parc
 Previews are animated (AVIF) and show the Start page, a script tab and the loading screen at full size. Browsers that can't play AVIF show a still screenshot instead.
 
 <picture>
-  <source srcset="screens.avif" type="image/avif">
-  <img src="screens.jpg" alt="Frieren theme">
+  <source srcset="ui.avif" type="image/avif">
+  <img src="ui.jpg" alt="Frieren theme">
 </picture>
 
 <picture>
