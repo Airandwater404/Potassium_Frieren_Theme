@@ -1,0 +1,176 @@
+/* Frieren theme for Potassium. Base theme: Light. */
+:root[data-theme] {
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+
+  --bg-app: rgba(252, 249, 240, 0.1);
+  --bg-chrome: rgba(252, 249, 240, 0.62);
+  --bg-sidebar: rgba(252, 249, 240, 0.62);
+  --bg-editor: rgba(252, 249, 240, 0.5);
+  --bg-panel: rgba(252, 249, 240, 0.7);
+  --bg-status: rgba(252, 249, 240, 0.8);
+  --bg-elevated: rgba(252, 249, 240, 0.96);
+  --bg-input: rgba(252, 249, 240, 0.6);
+  --bg-hover: rgba(176, 132, 52, 0.08);
+  --bg-active: rgba(176, 132, 52, 0.14);
+  --border: rgba(120, 100, 60, 0.16);
+  --border-strong: rgba(120, 100, 60, 0.34);
+
+  --text: #2b2a24;
+  --text-muted: #55524a;
+  --text-faint: #8d887a;
+  --row-icon: #c89a3e;
+
+  --accent: rgb(176, 132, 52);
+  --accent-hover: #c89a3e;
+  --accent-soft: rgba(176, 132, 52, 0.2);
+  --on-accent: #ffffff;
+  --tab-accent: rgb(176, 132, 52);
+  --tab-rule: transparent;
+  --tab-glyph: #c89a3e;
+  --tab-divider-width: 0px;
+  --tab-active-bg: rgba(176, 132, 52, 0.16);
+
+  --ok: #2f7d4f;
+  --warn: #b7791f;
+  --danger: #b8323a;
+  --titlebar-fg: #2b2a24;
+  --titlebar-close-hover: #b8323a;
+  --scrollbar-thumb: rgba(176, 132, 52, 0.3);
+}
+
+/* Settings opens over everything; keep it readable over the moving wallpaper. */
+:root[data-theme] .settings-dialog {
+  background-color: rgba(252, 249, 240, 0.92) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(1.2);
+  backdrop-filter: blur(24px) saturate(1.2);
+}
+
+:root[data-theme] .settings-dialog .settings {
+  background-color: transparent !important;
+}
+
+/* Monaco paints its own solid background; let the wallpaper through. */
+.monaco-editor,
+.monaco-editor .overflow-guard,
+.monaco-editor-background,
+.monaco-editor .margin,
+.monaco-editor .inputarea.ime-input {
+  background-color: transparent !important;
+}
+
+.monaco-editor .view-overlays .current-line,
+.monaco-editor .margin-view-overlays .current-line-margin {
+  background: rgba(176, 132, 52, 0.07) !important;
+  border: none !important;
+}
+
+.monaco-editor .line-numbers { color: #9d978a !important; }
+.monaco-editor .line-numbers.active-line-number { color: #b08434 !important; }
+.monaco-editor .view-lines { text-shadow: 0 0 3px rgba(255, 255, 255, 0.9); }
+.monaco-editor .scroll-decoration { box-shadow: none !important; }
+
+/* The minimap is a canvas with a solid fill; blending drops it into the wallpaper. */
+.monaco-editor .minimap,
+.monaco-editor .minimap canvas {
+  mix-blend-mode: multiply !important;
+}
+
+.monaco-editor .minimap { opacity: 0.55 !important; }
+.monaco-editor .minimap-shadow-visible { box-shadow: none !important; }
+
+/* Show the wallpaper on the loading and login screens instead of Potassium's own picture. */
+:root[data-theme] .backdrop {
+  background: rgba(30, 28, 44, 0.32) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  backdrop-filter: blur(6px) !important;
+}
+
+/* Japanese labels next to the English ones. */
+:root[data-theme] .titlebar-title { font-size: 0 !important; }
+:root[data-theme] .titlebar-title::after {
+  content: "葬送のフリーレン · カリウム";
+  font-size: 13px;
+  font-family: "Yu Mincho", "YuMincho", "BIZ UDPMincho", "MS PMincho", Georgia, serif;
+  letter-spacing: 0.28em;
+}
+
+:root[data-theme] .sidebar .head-title { font-size: 0 !important; }
+:root[data-theme] .sidebar .head-title::after {
+  content: "魔導書";
+  font-size: 14px;
+  font-family: "Yu Mincho", "YuMincho", "BIZ UDPMincho", "MS PMincho", Georgia, serif;
+  letter-spacing: 0.08em;
+}
+
+:root[data-theme] .sidebar .section:has(+ .section) .section-title::after { content: " · スクリプト"; letter-spacing: 0.04em; }
+:root[data-theme] .sidebar .section + .section .section-title::after { content: " · 自動実行"; letter-spacing: 0.04em; }
+:root[data-theme] .console .tabs .tab:nth-child(1)::after { content: "　出力"; letter-spacing: 0.04em; }
+:root[data-theme] .console .tabs .tab:nth-child(2)::after { content: "　問題"; letter-spacing: 0.04em; }
+
+:root[data-theme] .start .hero h1 { font-size: 0 !important; line-height: 1 !important; }
+:root[data-theme] .start .hero h1::before {
+  content: "FRIEREN · 千年の魔法使い";
+  display: block;
+  margin-bottom: 10px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.42em;
+  color: var(--accent);
+}
+
+:root[data-theme] .start .hero h1::after {
+  content: "フリーレン";
+  font-family: "Yu Mincho", "YuMincho", "BIZ UDPMincho", "MS PMincho", Georgia, serif;
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+:root[data-theme] .start .links h2::after { content: "　始める"; }
+:root[data-theme] .start .recent h2::after { content: "　最近"; }
+:root[data-theme] .start .tip h2::after { content: "　今日のヒント"; }
+
+/* A vertical line of text at the foot of the explorer. */
+:root[data-theme] .sidebar { position: relative; isolation: isolate; }
+:root[data-theme] .sidebar::after {
+  content: "花畑を出す魔法";
+  position: absolute;
+  right: 16px;
+  bottom: 22px;
+  writing-mode: vertical-rl;
+  font-family: "Yu Mincho", "YuMincho", "BIZ UDPMincho", "MS PMincho", Georgia, serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5em;
+  color: rgba(176, 132, 52, 0.55);
+  pointer-events: none;
+}
+
+/* Gilded double rules. */
+:root[data-theme] header.titlebar { border-bottom: 3px double rgba(176, 132, 52, 0.6); }
+:root[data-theme] .sidebar { border-right: 3px double rgba(176, 132, 52, 0.5); }
+:root[data-theme] .splitter-x { background-color: transparent !important; }
+:root[data-theme] .tab-bar { box-shadow: inset 0 -1px 0 rgba(176, 132, 52, 0.45); }
+:root[data-theme] .tab-bar .strip .tab { background-image: none; font-family: "Yu Mincho", Georgia, serif; }
+:root[data-theme] .tab-bar .strip .tab::before,
+:root[data-theme] .tab-bar .strip .tab::after { display: none; }
+:root[data-theme] .tab-bar .strip .tab.is-active {
+  background-color: rgba(255, 253, 246, 0.9);
+  box-shadow: inset 0 2px 0 #b08434;
+  color: #2b2a24;
+  font-weight: 700;
+}
+:root[data-theme] .sidebar .section-title { color: #9a7330; }
+
+:root[data-theme] .start .hero h1::after {
+  color: #2b2a24;
+  text-shadow: 0 1px 0 #fff, 0 0 14px rgba(255, 240, 200, 0.9);
+}
+
+/* Animated wallpaper behind the whole app. */
+html, body {
+  background: linear-gradient(90deg, rgba(255, 252, 245, 0.6) 0%, rgba(255, 252, 245, 0.2) 45%, rgba(255, 252, 245, 0) 75%), url("https://raw.githubusercontent.com/Airandwater404/Potassium_Frieren_Theme/main/frieren.avif") center / cover fixed no-repeat, #fcf9f0 !important;
+}
